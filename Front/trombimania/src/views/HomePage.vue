@@ -39,6 +39,20 @@ User
       <router-link to="/page2" class="text-white hover:text-gray-300 mb-2">Admin</router-link>
     </div>
   </nav>
+  <div class="flex justify-center items-center">
+  <div class="p-6  grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
+    <!-- Utilisez v-for pour générer les cartes -->
+    <div v-for="item in items" :key="item.id" class="bg-green-200 p-4 shadow-md rounded-md">
+      <!-- Image de la carte -->
+      <img :src="item.imageUrl" alt="Image de la carte" class="bg-white w-full h-32 object-cover mb-2 rounded-md">
+
+      <!-- Contenu de la carte -->
+      <h2 class="text-lg font-semibold">{{ item.title }}</h2>
+      <p>{{ item.description }}</p>
+    </div>
+  </div>
+  </div>
+
 </template>
 
 
@@ -47,6 +61,32 @@ export default {
   name: 'NavBar',
   data() {
     return {
+      items: [
+        {
+          id: 1,
+          title: "Item 1",
+          description: "Description de l'item 1",
+          imageUrl: require("../assets/logo.png") // Chemin relatif à partir du composant
+        },
+        {
+          id: 2,
+          title: "Item 2",
+          description: "Description de l'item 2",
+          imageUrl: require("../assets/logo.png") // Utilisez la même image pour les autres éléments
+        },
+        {
+          id: 3,
+          title: "Item 3",
+          description: "Description de l'item 3",
+          imageUrl: require("../assets/logo.png")
+        },
+        {
+          id: 4,
+          title: "Item 4",
+          description: "Description de l'item 4",
+          imageUrl: require("../assets/logo.png")
+        }
+      ],
       showMenu: false,
     };
   },
