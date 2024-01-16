@@ -15,8 +15,7 @@ class UserController extends AbstractController
      */
     public function getUser(string $full_name): JsonResponse
     {
-        $user = $this->getDoctrine()->getRepository(UserDocument::class)->findOneBy(["nom_prenom"=> $full_name]);
-        return $this->json($user);
+        return $this->json($this->getDoctrine()->getRepository(UserDocument::class)->findOneBy(["nom_prenom"=> $full_name]));
     }
 
     /**
@@ -24,19 +23,21 @@ class UserController extends AbstractController
      */
     public function addUser(Request $request): JsonResponse
     {
-        $data = $request->getContent();
+        $data = json_decode($request->getContent(), true);
         $user = [
-            "nom" => $request."nom",
-            "prenom" => $request."prenom",
-            "poste" => $request."poste",
-            "equipe" => $request."equipe",
-            "agence" => $request."agence",
-            "photo_pro" => $request."photo_pro",
-            "photo_fun" => $request."photo_fun",
-            "nom_prenom" => $request."nom_prenom"
+            "nom" => $data["nom"],
+            "prenom" => $data["prenom"],
+            "poste" => $data["poste"],
+            "equipe" => $data["equipe"],
+            "agence" => $data["agence"],
+            "photo_pro" => $data["photo_pro"],
+            "photo_fun" => $data["photo_fun"],
+            "nom_prenom" => $data["nom_prenom"]
         ];
-        $data += $user;
-        $this->setContent($data);
+        $data = array_merge($data, $user);
+
+        $this->getDoctrine()->getManager()->persist($data)->flush();
+
         return $this->json(['message' => 'User added successfully']);
     }
 
@@ -45,19 +46,25 @@ class UserController extends AbstractController
      */
     public function editUser(string $full_name, Request $request): JsonResponse
     {
-        $data = $this->getDoctrine()->getRepository(UserDocument::class)->findOneBy([''=> $full_name]);
-        $user = [
-            "nom" => $request."nom",
-            "prenom" => $request."prenom",
-            "poste" => $request."poste",
-            "equipe" => $request."equipe",
-            "agence" => $request."agence",
-            "photo_pro" => $request."photo_pro",
-            "photo_fun" => $request."photo_fun",
-            "nom_prenom" => $request."nom_prenom"
-        ];
-        $data += $user;
-        $this->setContent($data);        
+        $user = $this->getDoctrine()->getRepository(UserDocument::class)->findOneBy([''=> $full_name]);
+
+        if (!$user) {
+            return $this->json(['error' => 'User not found'], 404);
+        }
+
+        $data = json_decode($request->getContent(), true);
+
+        $user->setNom($data["nom"]);
+        $user->setPrenom($data["prenom"]);
+        $user->setPoste($data["poste"]);
+        $user->setEquipe($data["equipe"]);
+        $user->setAgence($data["agence"]);
+        $user->setPhotoPro($data["photo_pro"]);
+        $user->setPhotoFun($data["photo_fun"]);
+        $user->setNomPrenom($data["nom_prenom"]);
+
+        $this->getDoctrine()->getManager()->flush();
+
         return $this->json(['message' => 'User edited successfully']);
     }
 
@@ -66,7 +73,14 @@ class UserController extends AbstractController
      */
     public function deleteUser(string $full_name): JsonResponse
     {
-        $data = $this->getDoctrine()->delete('', [''=> $full_name]);
+        $user = $this->getDoctrine()->getRepository(UserDocument::class)->findOneBy(['nom_prenom' => $full_name]);
+        
+        if (!$user) {
+            return $this->json(['error' => 'User not found'], 404);
+        }
+
+        $this->getDoctrine()->getManager()->remove($user)->flush();
+
         return $this->json(['message' => 'User deleted successfully']);
     }
 }
