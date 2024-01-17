@@ -30,7 +30,7 @@ try {
         return UserController::delete_user($full_name);
     });
 
-} catch (MongoDB\Driver\Exception\ConnectionException $e) {
-    echo 'Failed to connect to MongoDB: ' . $e->getMessage();
+} catch (MongoDB\Driver\Exception\ConnectionException $err) {
+    echo 'Failed to connect to MongoDB: ' . $err->getMessage();
 }
 
