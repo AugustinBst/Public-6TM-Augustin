@@ -44,7 +44,7 @@ class UserController extends AbstractController
         ];
         $data = array_merge($data, $user);
 
-        $this->entityManager()->getManager()->persist($data)->flush();
+        $this->entityManager->getManager()->persist($data)->flush();
 
         return $this->json(['message' => 'User added successfully']);
     }
@@ -54,7 +54,7 @@ class UserController extends AbstractController
      */
     public function editUser(string $full_name, Request $request): JsonResponse
     {
-        $user = $this->entityManager()->getRepository(UserDocument::class)->findOneBy([''=> $full_name]);
+        $user = $this->entityManager->getRepository(UserDocument::class)->findOneBy([''=> $full_name]);
 
         if (!$user) {
             return $this->json(['error' => 'User not found'], 404);
@@ -71,7 +71,7 @@ class UserController extends AbstractController
         $user->setPhotoFun($data["photo_fun"]);
         $user->setNomPrenom($data["nom_prenom"]);
 
-        $this->entityManager()->getManager()->flush();
+        $this->entityManager->getManager()->flush();
 
         return $this->json(['message' => 'User edited successfully']);
     }
@@ -81,13 +81,13 @@ class UserController extends AbstractController
      */
     public function deleteUser(string $full_name): JsonResponse
     {
-        $user = $this->entityManager()->getRepository(UserDocument::class)->findOneBy(['nom_prenom' => $full_name]);
+        $user = $this->entityManager->getRepository(UserDocument::class)->findOneBy(['nom_prenom' => $full_name]);
         
         if (!$user) {
             return $this->json(['error' => 'User not found'], 404);
         }
 
-        $this->entityManager()->getManager()->remove($user)->flush();
+        $this->entityManager->getManager()->remove($user)->flush();
 
         return $this->json(['message' => 'User deleted successfully']);
     }

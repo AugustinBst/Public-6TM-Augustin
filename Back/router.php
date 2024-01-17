@@ -4,6 +4,7 @@ require 'vendor/autoload.php';
 
 use App\Controller\UserController;
 use Symfony\Component\Routing\RouteCollectionBuilder;
+use Doctrine\Persistence\ManagerRegistry as PersistenceManagerRegistry;
 
 try {
     $client = new MongoDB\Client("mongodb+srv://valentinperon2004:aQC77OoHWzODS2VV@cluster0.6kugulc.mongodb.net/");
