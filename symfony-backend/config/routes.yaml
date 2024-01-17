@@ -1,9 +1,24 @@
 controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
+    resource: ../src/Controller/
+    namespace: App\Controller
     type: attribute
 
-my_route:
-    path: /my-route
-    controller: App\Controller\YourController::yourAction
+get_user:
+    path: /users/{full_name}
+    controller: UserController::getUser
+    methods: ['GET']
+
+add_user:
+    path: /users
+    controller: UserController::addUser
+    methods: ['POST']
+
+edit_user:
+    path: /users/{full_name}
+    controller: UserController::editUser
+    methods: ['PUT']
+
+delete_user:
+    path: /users/{full_name}
+    controller: UserController::deleteUser
+    methods: ['DELETE']
