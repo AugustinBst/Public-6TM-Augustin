@@ -46,7 +46,6 @@ User
       <!-- Image de la carte -->
       <img :src="item.imageUrl" alt="Image de la carte" class="bg-white w-full h-32 object-cover mb-2 rounded-md">
 
-      <!-- Contenu de la carte -->
       <h2 class="text-lg font-semibold">{{ item.title }}</h2>
       <p>{{ item.description }}</p>
     </div>
@@ -62,6 +61,30 @@ export default {
   data() {
     return {
       items: [
+        {
+          id: 1,
+          title: "Item 1",
+          description: "Description de l'item 1",
+          imageUrl: require("../assets/logo.png") // Chemin relatif à partir du composant
+        },
+        {
+          id: 2,
+          title: "Item 2",
+          description: "Description de l'item 2",
+          imageUrl: require("../assets/logo.png") // Utilisez la même image pour les autres éléments
+        },
+        {
+          id: 3,
+          title: "Item 3",
+          description: "Description de l'item 3",
+          imageUrl: require("../assets/logo.png")
+        },
+        {
+          id: 4,
+          title: "Item 4",
+          description: "Description de l'item 4",
+          imageUrl: require("../assets/logo.png")
+        },
         {
           id: 1,
           title: "Item 1",
