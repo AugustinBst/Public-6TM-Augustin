@@ -21,7 +21,7 @@ class UserController extends AbstractController
     /**
      * @Route("/users/{full_name}", name="get_user", methods={"GET"})
      */
-    public function getUser(string $full_name): JsonResponse
+    public function getObject(string $full_name): JsonResponse
     {
         return $this->json($this->entityManager->getRepository(UserDocument::class)->findOneBy(["nom_prenom" => $full_name]));
     }
@@ -41,9 +41,8 @@ class UserController extends AbstractController
             "photo_fun" => $data["photo_fun"],
             "nom_prenom" => $data["nom_prenom"]
         ];
-        $data = array_merge($data, $user);
 
-        $this->entityManager->persist($data)->flush();
+        $this->entityManager->persist($user)->flush();
 
         return $this->json(['message' => 'User added successfully']);
     }
