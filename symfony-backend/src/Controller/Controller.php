@@ -16,6 +16,7 @@ try {
 }
 
 $routes = new RouteCollectionBuilder();
+$routes->import('mock_route.php');
 
 $routes->add('/users/{full_name}', 'GET', 'App\Controller\UserController::getObject');
 $routes->add('/users', 'POST', 'App\Controller\UserController::addUser');
