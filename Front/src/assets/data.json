@@ -22,7 +22,9 @@
      "prenom": "Christophe",
      "poste": "Développeur Senior ",
      "equipe": "Pôle Walker",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "AULNETTE",
@@ -38,7 +40,9 @@
      "prenom": "Ketevan",
      "poste": "Assistante administrative",
      "equipe": "Team Rocket",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "BAUDOT",
@@ -90,7 +94,9 @@
      "prenom": "Brice",
      "poste": "Développeur",
      "equipe": "Bug Buster",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "CHEVALIER",
@@ -106,7 +112,9 @@
      "prenom": "Benoît",
      "poste": "Développeur",
      "equipe": "Team Elephant ",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "COET",
@@ -122,7 +130,9 @@
      "prenom": "Bastien",
      "poste": "Alternant",
      "equipe": "Team IT ",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "CRUTEL",
@@ -156,7 +166,9 @@
      "prenom": "Julien",
      "poste": "Développeur",
      "equipe": "Bug Buster",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "DELENTE",
@@ -172,7 +184,9 @@
      "prenom": "Pierre",
      "poste": "Développeur Junior",
      "equipe": "Pôle Position ",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "DIGUET",
@@ -206,28 +220,36 @@
      "prenom": "Clara",
      "poste": "Chef de Projet",
      "equipe": "Pôle Walker",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "GELEBART",
      "prenom": "Nicolas",
      "poste": "Business Manager",
      "equipe": "Team Rocket ",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "GINGUENEAU",
      "prenom": "Pauline",
      "poste": "Assistante Commerciale ",
      "equipe": "Team Rocket ",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "GOSSELIN",
      "prenom": "Antoine",
      "poste": "Développeur Junior",
      "equipe": "Pôle Walker",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "GREFFIER",
@@ -288,7 +310,9 @@
      "prenom": "Sébastien",
      "poste": "Développeur Senior ",
      "equipe": "Bug Buster",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "LECOLAZET",
@@ -304,7 +328,9 @@
      "prenom": "Thomas",
      "poste": "Responsable d'Equipe",
      "equipe": "Pôle Position ",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "LEMARIE",
@@ -374,7 +400,9 @@
      "prenom": "Bertille",
      "poste": "Chargée de communication ",
      "equipe": "Team Rocket",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "MADEC",
@@ -435,7 +463,9 @@
      "prenom": "Alix",
      "poste": "Cheffe de projet",
      "equipe": "Team Elephant ",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "POISSON",
@@ -451,7 +481,9 @@
      "prenom": "Emilie",
      "poste": "Cheffe de projet",
      "equipe": "Pôle Cousteau ",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "QUENTEL",
@@ -521,7 +553,9 @@
      "prenom": "Emeline",
      "poste": "Alternant",
      "equipe": "Team Rocket ",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "THOMAS",
@@ -537,7 +571,9 @@
      "prenom": "Julien",
      "poste": "Business Developer ",
      "equipe": "Team Rocket",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "TREMIER",
@@ -580,14 +616,18 @@
      "prenom": "David",
      "poste": "Ingénieur Fullstack",
      "equipe": "Pôle Passe Partout ",
-     "agence": "Angers"
+     "agence": "Angers",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "BIORET",
      "prenom": "Nicolas",
      "poste": "Développeur",
      "equipe": "Pôle Passe Partout ",
-     "agence": "Angers"
+     "agence": "Angers",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "BONTEMPS",
@@ -621,7 +661,9 @@
      "prenom": "Zacharie",
      "poste": "Développeur Junior",
      "equipe": "Pôle Passe Partout ",
-     "agence": "Angers"
+     "agence": "Angers",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "DURAND",
@@ -664,21 +706,27 @@
      "prenom": "Kévin",
      "poste": "Développeur",
      "equipe": "Pôle Passe Partout ",
-     "agence": "Angers"
+     "agence": "Angers",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "JLAIEL",
      "prenom": "Islem",
      "poste": "Alternant ",
      "equipe": "Pôle Passe Partout ",
-     "agence": "Angers"
+     "agence": "Angers",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "KOBAA",
      "prenom": "Marwen",
      "poste": "Développeur",
      "equipe": "Pôle Griffondor",
-     "agence": "Angers"
+     "agence": "Angers",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "KULESIAK",
@@ -748,48 +796,62 @@
      "prenom": "Louis",
      "poste": "Développeur Front ",
      "equipe": "Studio Design",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "DOLLO",
      "prenom": "Vincent",
      "poste": "Développeur Mobile",
      "equipe": "Team Dev",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "LANSONNEUR",
      "prenom": "Thomas",
      "poste": "UX/UI Designer ",
      "equipe": "Studio Design",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "LE GOFF ",
      "prenom": "Jean-Marie",
      "poste": "Coordinateur de projets ",
      "equipe": "Team Dev",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "LE MEE ",
      "prenom": "Antonin",
      "poste": "Développeur",
      "equipe": "Team Dev",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "SACHET",
      "prenom": "Mathieu",
      "poste": "Lead Developpeur ",
      "equipe": "Team Dev",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     },
     {
      "nom": "TAILLAND ",
      "prenom": "Gaelle",
      "poste": "Cheffe de projet",
      "equipe": "Team Dev",
-     "agence": "Rennes"
+     "agence": "Rennes",
+     "photo_pro": "https://png.pngtree.com/element_our/20200610/ourmid/pngtree-black-default-avatar-image_2237212.jpg",
+     "photo_fun": "https://i.pinimg.com/originals/08/61/b7/0861b76ad6e3b156c2b9d61feb6af864.jpg"
     }
 ]
