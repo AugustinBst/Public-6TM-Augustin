@@ -1062,12 +1062,18 @@ class Mock_route {
     }
 }
 
-Mock_route::handleRequest();
-//cors
+// Set CORS headers
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Headers: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
 header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Max-Age: 86400");
 header("Access-Control-Expose-Headers: Content-Length, X-JSON");
-header("Access-Control-Allow-Headers: Content-Type, Accept, Authorization, X-Requested-With, X-HTTP-Method-Override");
+
+// Check if it's an OPTIONS request (preflight)
+if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
+    exit();
+}
+
+// Your existing code to handle the request
+Mock_route::handleRequest();
