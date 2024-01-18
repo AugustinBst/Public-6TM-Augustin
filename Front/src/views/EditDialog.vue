@@ -81,6 +81,7 @@ export default {
       });
       this.close();
     },
+// closing not working 
     close() {
       this.dialog = false;
     },
