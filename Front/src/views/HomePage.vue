@@ -40,23 +40,32 @@ User
     </div>
   </nav>
   <div class="flex justify-center items-center">
-  <div class="p-6  grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ">
+  <div class="p-6  grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
     <!-- Utilisez v-for pour générer les cartes -->
-    <div v-for="item in items" :key="item.id" class="bg-green-200 p-4 shadow-md rounded-md">
+    <div v-for="item in items" :key="item.id" class="bg-green-200 p-7 shadow-md rounded-md">
       <!-- Image de la carte -->
-      <img :src="item.imageUrl" alt="Image de la carte" class="bg-white w-full h-32 object-cover mb-2 rounded-md">
-
-      <h2 class="text-lg font-semibold">{{ item.title }}</h2>
-      <p>{{ item.description }}</p>
+      <img :src="item.hovered ? item.imageUrl2 : item.imageUrl"
+        @mouseover="handleMouseOver(item)"
+        @mouseleave="handleMouseLeave(item)" alt="Image de la carte" class="bg-white w-full h-32 object-cover mb-2 rounded-md">
+      <h2 class="text-lg font-semibold">{{item.title}}</h2>
+      <p>{{item.description}}</p>
     </div>
   </div>
   </div>
-
+  <button @click="mounted" className="rounded-lg custom-green p-2 m-2 font-semibold shadow-lg stroke-gray-900">AJOUTER</button>
 </template>
 
 
+
 <script>
+import { Axios } from 'axios';
+
 export default {
+  mounted() {
+    Axios.get("http://localhost:8000/").then((response) => {
+      console.log(response);
+    })
+  },
   name: 'NavBar',
   data() {
     return {
@@ -65,31 +74,36 @@ export default {
           id: 1,
           title: "Item 1",
           description: "Description de l'item 1",
-          imageUrl: require("../assets/logo.png") // Chemin relatif à partir du composant
+          imageUrl: require("../assets/logo.png"),
+          imageUrl2: require("../assets/car.png"),
         },
         {
           id: 2,
           title: "Item 2",
           description: "Description de l'item 2",
-          imageUrl: require("../assets/logo.png") // Utilisez la même image pour les autres éléments
+          imageUrl: require("../assets/logo.png"),
+          imageUrl2: require("../assets/car.png"),
         },
         {
           id: 3,
           title: "Item 3",
           description: "Description de l'item 3",
-          imageUrl: require("../assets/logo.png")
+          imageUrl: require("../assets/logo.png"),
+          imageUrl2: require("../assets/car.png")
         },
         {
           id: 4,
           title: "Item 4",
           description: "Description de l'item 4",
-          imageUrl: require("../assets/logo.png")
+          imageUrl: require("../assets/logo.png"),
+          imageUrl2: require("../assets/car.png")
         },
         {
           id: 1,
           title: "Item 1",
           description: "Description de l'item 1",
-          imageUrl: require("../assets/logo.png") // Chemin relatif à partir du composant
+          imageUrl: require("../assets/logo.png"),
+          imageUrl2: require("../assets/car.png")
         },
         {
           id: 2,
@@ -108,7 +122,7 @@ export default {
           title: "Item 4",
           description: "Description de l'item 4",
           imageUrl: require("../assets/logo.png")
-        }
+        },
       ],
       showMenu: false,
     };
@@ -116,6 +130,21 @@ export default {
   methods: {
     toggleMenu() {
       this.showMenu = !this.showMenu;
+    },
+    handleMouseOver(item) {
+      item.hovered = true;
+    },
+    handleMouseLeave(item) {
+      item.hovered = false;
+    },
+    ajouter() {
+      // Logique pour le bouton Ajouter
+    },
+    supprimer() {
+      // Logique pour le bouton Supprimer
+    },
+    modifier() {
+      // Logique pour le bouton Modifier
     },
   },
 };

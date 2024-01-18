@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
+    "strict": true,
+    "moduleResolution": "node",
     "target": "esnext",
     "module": "esnext",
-    "strict": true,
     "jsx": "preserve",
-    "moduleResolution": "node",
     "experimentalDecorators": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -37,4 +37,5 @@
   "exclude": [
     "node_modules"
   ]
+  
 }
