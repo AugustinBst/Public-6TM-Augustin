@@ -55,15 +55,22 @@ User
   </div>
   </template>
 <script>
-import data from '@/assets/data.json';
+import axios from 'axios';
 export default {
 
+  mounted() {
+    axios.get("http://localhost:8000/")
+    .then(response => {
+        // Mettez à jour la propriété items après avoir reçu la réponse
+        this.items = response.data;
+      })
+  },
   name: 'NavBar',
   data() {
     return {
 
       isButtonClicked: false,
-      items: data,
+      items: [],
       showMenu: false,
     };
   },
