@@ -25,6 +25,18 @@ User
     </div>
 
 
+    <div>
+        <button @click="handleButtonClick('ajouter')" :class="{'bg-slate-400': buttonStates['ajouter'], 'custom-blueGrey': !buttonStates['ajouter'], 'scale-90': buttonStates['ajouter']}" class="rounded-lg p-2 m-2 font-semibold shadow-lg text-white">
+          Ajouter
+        </button>
+        <button @click="handleButtonClick('modifier')" :class="{'bg-slate-400': buttonStates['modifier'], 'custom-blueGrey': !buttonStates['modifier'], 'scale-90': buttonStates['modifier']}" class="rounded-lg p-2 m-2 font-semibold shadow-lg text-white">
+          Modifier
+        </button>
+        <button @click="handleButtonClick('supprimer')" :class="{'bg-slate-400': buttonStates['supprimer'], 'custom-blueGrey': !buttonStates['supprimer'], 'scale-90': buttonStates['supprimer']}" class="rounded-lg p-2 m-2 font-semibold shadow-lg text-white">
+          Supprimer
+        </button>
+    </div>
+
     <!-- Menu hamburger pour les tailles d'écran plus petites -->
     <div v-if="showMenu" class="lg:hidden absolute top-0 left-0 right-0 bg-gray-800 p-4 flex flex-col items-center">
       <button @click="toggleMenu" class="lg:hidden text-white focus:outline-none ml-auto">
@@ -69,11 +81,6 @@ export default {
   name: 'NavBar',
   data() {
     return {
-      buttonStates: {
-        ajouter: false,
-        modifier: false,
-        supprimer: false
-      },
       isButtonClicked: false,
       items: [
         {
@@ -134,15 +141,6 @@ export default {
     };
   },
   methods: {
-    handleButtonClick(button) {
-      Object.keys(this.buttonStates).forEach(key => {
-        this.buttonStates[key] = false;
-      });
-      this.buttonStates[button] = true;
-      setTimeout(() => {
-        this.buttonStates[button] = false;
-      }, 150);
-    },
     toggleMenu() {
       this.showMenu = !this.showMenu;
     },
