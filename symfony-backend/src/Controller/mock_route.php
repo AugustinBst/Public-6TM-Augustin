@@ -1063,3 +1063,11 @@ class Mock_route {
 }
 
 Mock_route::handleRequest();
+//cors
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: *");
+header("Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE");
+header("Access-Control-Allow-Credentials: true");
+header("Access-Control-Max-Age: 86400");
+header("Access-Control-Expose-Headers: Content-Length, X-JSON");
+header("Access-Control-Allow-Headers: Content-Type, Accept, Authorization, X-Requested-With, X-HTTP-Method-Override");
