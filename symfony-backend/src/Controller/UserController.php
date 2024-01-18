@@ -111,4 +111,26 @@ class UserController extends AbstractController
 
         return $this->json($formattedUsers);
     }
+
+    public function get_data_search_bar(string $start_with): JsonResponse
+    {
+        $allUsers = $this->doctrine->getRepository(UserDocument::class)->findBy(["nom_prenom" => new \MongoDB\BSON\Regex('^'.$start_with)]);
+
+        $formattedUsers = [];
+
+        foreach ($allUsers as $user) {
+            $formattedUsers[] = [
+                'nom' => $user->getNom(),
+                'prenom' => $user->getPrenom(),
+                "poste" => $user->getPoste(),
+                "equipe" => $user->getEquipe(),
+                "agence" => $user->getAgence(),
+                "photo_pro" => $user->getPhotoPro(),
+                "photo_fun" => $user->getPhotoFun(),
+                "nom_prenom" => $user->getNomPrenom(),
+            ];
+        }
+
+        return $this->json($formattedUsers);
+    }
 }
