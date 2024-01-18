@@ -18,6 +18,12 @@ class UserDocument
     /** @MongoDB\Field(type="string") */
     private $prenom;
 
+    private $poste;
+
+    private $agence;
+
+    private $equipe;
+
     /** @MongoDB\Field(type="string") */
     private $photo_pro;
 
@@ -39,7 +45,10 @@ class UserDocument
     public function getId(): string {return $this->id;}
     public function getNom(): string {return $this->nom;}
     public function getPrenom(): string {return $this->prenom;}
+    public function getPoste(): string {return $this->poste;}
+    public function getAgence(): string {return $this->agence;}
+    public function getEquipe(): string {return $this->equipe;}
     public function getPhotoPro(): string {return $this->photo_pro;}
-    public function getPhotofun(): string {return $this->photo_fun;}
+    public function getPhotoFun(): string {return $this->photo_fun;}
     public function getNomPrenom(): string {return $this->nom_prenom;}
 }
