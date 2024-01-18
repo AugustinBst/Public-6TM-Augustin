@@ -39,28 +39,23 @@ User
       <router-link to="/page2" class="text-white hover:text-gray-300 mb-2">Contact</router-link>
     </div>
   </nav>
+
+
+
   <div class="flex justify-center items-center">
   <div class="p-6  grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-
-
-
-
     <div v-for="item in items" :key="item.id" class="bg-green-200 p-7 shadow-md rounded-md">
-      <img :src="item.hovered ? item.imageUrl2 : item.imageUrl"
+      <img :src="item.hovered ? (item.photo_fun || '../assets/anonymous.png') : (item.photo_pro)"
         @mouseover="handleMouseOver(item)"
-        @mouseleave="handleMouseLeave(item)" alt="Image de la carte" class="bg-white w-full h-32 object-cover mb-2 rounded-md">
-      <h2 class="text-lg font-semibold">{{item.title}}</h2>
-      <p>{{item.description}}</p>
+        @mouseleave="handleMouseLeave(item)" alt="Pas de photos" class="bg-white w-65 h-45 object-cover mb-2 rounded-md">
+        <h2 class="text-lg font-semibold">{{item.prenom + " " + item.nom}}</h2>
+        <p>{{"Infos: " + item.poste + "  " + item.agence + " Equipe: " + item.equipe}}</p>
     </div>
   </div>
   </div>
-
   </template>
-
-
-
 <script>
-
+import data from '@/assets/data.json';
 export default {
 
   name: 'NavBar',
@@ -68,61 +63,7 @@ export default {
     return {
 
       isButtonClicked: false,
-      items: [
-        {
-          id: 1,
-          title: "Item 1",
-          description: "Description de l'item 1",
-          imageUrl: require("../assets/logo.png"),
-          imageUrl2: require("../assets/car.png"),
-        },
-        {
-          id: 2,
-          title: "Item 2",
-          description: "Description de l'item 2",
-          imageUrl: require("../assets/logo.png"),
-          imageUrl2: require("../assets/car.png"),
-        },
-        {
-          id: 3,
-          title: "Item 3",
-          description: "Description de l'item 3",
-          imageUrl: require("../assets/logo.png"),
-          imageUrl2: require("../assets/car.png")
-        },
-        {
-          id: 4,
-          title: "Item 4",
-          description: "Description de l'item 4",
-          imageUrl: require("../assets/logo.png"),
-          imageUrl2: require("../assets/car.png")
-        },
-        {
-          id: 1,
-          title: "Item 1",
-          description: "Description de l'item 1",
-          imageUrl: require("../assets/logo.png"),
-          imageUrl2: require("../assets/car.png")
-        },
-        {
-          id: 2,
-          title: "Item 2",
-          description: "Description de l'item 2",
-          imageUrl: require("../assets/logo.png")
-        },
-        {
-          id: 3,
-          title: "Item 3",
-          description: "Description de l'item 3",
-          imageUrl: require("../assets/logo.png")
-        },
-        {
-          id: 4,
-          title: "Item 4",
-          description: "Description de l'item 4",
-          imageUrl: require("../assets/logo.png")
-        },
-      ],
+      items: data,
       showMenu: false,
     };
   },

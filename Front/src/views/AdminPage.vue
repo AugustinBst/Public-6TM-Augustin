@@ -38,23 +38,25 @@
         <button @click="handleButtonClick('ajouter')" :class="{'bg-slate-400': buttonStates['ajouter'], 'custom-blueGrey': !buttonStates['ajouter'], 'scale-90': buttonStates['ajouter']}" class="rounded-lg p-2 m-2 font-semibold shadow-lg text-white">
           Ajouter
         </button>
-        <button @click="handleButtonClick('modifier')" :class="{'bg-slate-400': buttonStates['modifier'], 'custom-blueGrey': !buttonStates['modifier'], 'scale-90': buttonStates['modifier']}" class="rounded-lg p-2 m-2 font-semibold shadow-lg text-white">
-          Modifier
-        </button>
-        <button @click="handleButtonClick('supprimer')" :class="{'bg-slate-400': buttonStates['supprimer'], 'custom-blueGrey': !buttonStates['supprimer'], 'scale-90': buttonStates['supprimer']}" class="rounded-lg p-2 m-2 font-semibold shadow-lg text-white">
-          Supprimer
-        </button>
   </div>
   <div class="flex justify-center items-center">
-  <div class="p-6  grid  grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <!-- Utilisez v-for pour générer les cartes -->
+  <div class="p-6  grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
     <div v-for="item in items" :key="item.id" class="bg-green-200 p-7 shadow-md rounded-md">
-      <!-- Image de la carte -->
-      <img :src="item.hovered ? item.imageUrl2 : item.imageUrl"
+      <img :src="item.hovered ? (item.photo_fun || '../assets/anonymous.png') : (item.photo_pro)"
         @mouseover="handleMouseOver(item)"
-        @mouseleave="handleMouseLeave(item)" alt="Image de la carte" class="bg-white w-full h-32 object-cover mb-2 rounded-md">
-      <h2 class="text-lg font-semibold">{{item.title}}</h2>
-      <p>{{item.description}}</p>
+        @mouseleave="handleMouseLeave(item)" alt="Pas de photos" class="bg-white w-65 h-45 object-cover mb-2 rounded-md">
+    <h2 class="text-lg font-semibold">{{item.title}}</h2>
+    <p>{{item.description}}</p>
+    <div class="flex justify-center">
+    <button @click="handleButtonClick('modifier')" :class="{'bg-green-500': buttonStates['modifier'], 'bg-yellow-50': !buttonStates['modifier'], 'scale-90': buttonStates['modifier']}" class="rounded-lg p-2 m-2 font-semibold shadow-lg text-white">
+    <img v-if="buttonStates['modifier']" src="../assets/edit.svg"  class="w-7 h-7">
+    <img v-else src="../assets/edit.svg"  class="w-8 h-8">
+    </button>
+    <button @click="handleButtonClick('supprimer')" :class="{'bg-red-600': buttonStates['supprimer'], 'bg-yellow-50': !buttonStates['supprimer'], 'scale-90': buttonStates['supprimer']}" class="rounded-lg p-2 m-2 font-semibold shadow-lg text-white">
+    <img v-if="buttonStates['supprimer']" src="../assets/user-delete.svg" class="w-7 h-7">
+    <img v-else src="../assets/user-delete.svg" class="w-8 h-8">
+    </button>
+  </div>
     </div>
   </div>
   </div>
@@ -66,6 +68,7 @@
 
 
 <script>
+import data from '@/assets/data.json';
 
 export default {
 
@@ -78,61 +81,7 @@ export default {
         supprimer: false
       },
       isButtonClicked: false,
-      items: [
-        {
-          id: 1,
-          title: "Item 1",
-          description: "Description de l'item 1",
-          imageUrl: require("../assets/logo.png"),
-          imageUrl2: require("../assets/car.png"),
-        },
-        {
-          id: 2,
-          title: "Item 2",
-          description: "Description de l'item 2",
-          imageUrl: require("../assets/logo.png"),
-          imageUrl2: require("../assets/car.png"),
-        },
-        {
-          id: 3,
-          title: "Item 3",
-          description: "Description de l'item 3",
-          imageUrl: require("../assets/logo.png"),
-          imageUrl2: require("../assets/car.png")
-        },
-        {
-          id: 4,
-          title: "Item 4",
-          description: "Description de l'item 4",
-          imageUrl: require("../assets/logo.png"),
-          imageUrl2: require("../assets/car.png")
-        },
-        {
-          id: 1,
-          title: "Item 1",
-          description: "Description de l'item 1",
-          imageUrl: require("../assets/logo.png"),
-          imageUrl2: require("../assets/car.png")
-        },
-        {
-          id: 2,
-          title: "Item 2",
-          description: "Description de l'item 2",
-          imageUrl: require("../assets/logo.png")
-        },
-        {
-          id: 3,
-          title: "Item 3",
-          description: "Description de l'item 3",
-          imageUrl: require("../assets/logo.png")
-        },
-        {
-          id: 4,
-          title: "Item 4",
-          description: "Description de l'item 4",
-          imageUrl: require("../assets/logo.png")
-        },
-      ],
+      items: data,
       showMenu: false,
     };
   },
