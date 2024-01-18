@@ -89,4 +89,26 @@ class UserController extends AbstractController
 
         return $this->json(['message' => 'User deleted successfully']);
     }
+
+    public function getData(): JsonResponse
+    {
+        $allUsers = $this->doctrine->getRepository(UserDocument::class)->findAll();
+
+        $formattedUsers = [];
+
+        foreach ($allUsers as $user) {
+            $formattedUsers[] = [
+                'nom' => $user->getNom(),
+                'prenom' => $user->getPrenom(),
+                "poste" => $user->getPoste(),
+                "equipe" => $user->getEquipe(),
+                "agence" => $user->getAgence(),
+                "photo_pro" => $user->getPhotoPro(),
+                "photo_fun" => $user->getPhotoFun(),
+                "nom_prenom" => $user->getNomPrenom(),
+            ];
+        }
+
+        return $this->json($formattedUsers);
+    }
 }
