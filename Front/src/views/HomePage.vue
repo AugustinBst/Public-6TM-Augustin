@@ -21,7 +21,7 @@ User
     <div class="hidden lg:flex items-center space-x-4">
       <router-link to="/" class="text-white hover:text-gray-300 text-lg">Accueil</router-link>
       <router-link to="/admin" class="text-white hover:text-gray-300 text-lg">Admin</router-link>
-      <router-link to="/public" class="text-white hover:text-gray-300 text-lg">Contact</router-link>
+      <router-link to="/admin" class="text-white hover:text-gray-300 text-lg">Contact</router-link>
     </div>
 
 
@@ -35,15 +35,17 @@ User
       </svg>
       </button>
       <router-link to="/" class="text-white hover:text-gray-300 mb-2">Accueil</router-link>
-      <router-link to="/page1" class="text-white hover:text-gray-300 mb-2">Trombinoscope</router-link>
-      <router-link to="/page2" class="text-white hover:text-gray-300 mb-2">Admin</router-link>
+      <router-link to="/admin" class="text-white hover:text-gray-300 mb-2">Admin</router-link>
+      <router-link to="/page2" class="text-white hover:text-gray-300 mb-2">Contact</router-link>
     </div>
   </nav>
   <div class="flex justify-center items-center">
   <div class="p-6  grid  grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-    <!-- Utilisez v-for pour générer les cartes -->
+
+
+
+
     <div v-for="item in items" :key="item.id" class="bg-green-200 p-7 shadow-md rounded-md">
-      <!-- Image de la carte -->
       <img :src="item.hovered ? item.imageUrl2 : item.imageUrl"
         @mouseover="handleMouseOver(item)"
         @mouseleave="handleMouseLeave(item)" alt="Image de la carte" class="bg-white w-full h-32 object-cover mb-2 rounded-md">
@@ -58,22 +60,13 @@ User
 
 
 <script>
-import { Axios } from 'axios';
 
 export default {
-  mounted() {
-    Axios.get("http://localhost:8000/").then((response) => {
-      console.log(response);
-    })
-  },
+
   name: 'NavBar',
   data() {
     return {
-      buttonStates: {
-        ajouter: false,
-        modifier: false,
-        supprimer: false
-      },
+
       isButtonClicked: false,
       items: [
         {

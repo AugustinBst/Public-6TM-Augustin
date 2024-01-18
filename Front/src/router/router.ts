@@ -1,16 +1,14 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
+import HOME from '@/views/HomePage.vue'
+import ADMIN from '@/views/AdminPage.vue'
 
-
-const routes: Array<RouteRecordRaw> = [
+const routes = [
   {
-    path: '/',
-    name: 'Home',
-    component: () => import('@/views/Home.vue'),
+    path: '/', name: 'Home', component: HOME,
   },
   {
-    path: '/',
-    redirect: '/home',
-  }
+    path: '/admin', name: 'Admin', component: ADMIN,
+  },
   // Other routes...
 ];
 
