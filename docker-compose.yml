@@ -3,8 +3,8 @@ version: '3'
 services:
   frontend:
     build:
-      context: ./vue-frontend
-      dockerfile: Dockerfile.frontend
+      context: ./Front
+      dockerfile: Dockerfile
     ports:
       - "8080:8080"
 
