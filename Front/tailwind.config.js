@@ -21,6 +21,9 @@ module.exports = {
             },
             '.custom-green': {
               backgroundColor: `#C1EDFB`,
+            },
+            '.custom-red': {
+              backgroundColor: 'rgb(255, 0, 0, 50)',
             }
           };
           addUtilities(newUtilities, ['responsive', 'hover']);

@@ -27,22 +27,21 @@
             d="M4 6h16M4 12h16m-7 6h7"></path>
       </svg>
       </button>
-      <router-link to="/" class="text-white hover:text-gray-300 mb-2">Accueil</router-link>
-      <router-link to="/page1" class="text-white hover:text-gray-300 mb-2">Trombinoscope</router-link>
-      <router-link to="/page2" class="text-white hover:text-gray-300 mb-2">Admin</router-link>
     </div>
   </nav>
 
-
   <div className="flex justify-center">
-        <button @click="handleButtonClick('ajouter')" :class="{'bg-slate-400': buttonStates['ajouter'], 'custom-blueGrey': !buttonStates['ajouter'], 'scale-90': buttonStates['ajouter']}" class="rounded-lg p-2 m-2 font-semibold shadow-lg text-white">
-          Ajouter
+        <button @click="openAddDialog" :class="{'bg-slate-400': buttonStates['ajouter'], 'custom-blueGrey': !buttonStates['ajouter'], 'scale-90': buttonStates['ajouter']}" class="rounded-lg p-2 m-2 font-semibold shadow-lg text-white">
+          Add
         </button>
-        <button @click="handleButtonClick('modifier')" :class="{'bg-slate-400': buttonStates['modifier'], 'custom-blueGrey': !buttonStates['modifier'], 'scale-90': buttonStates['modifier']}" class="rounded-lg p-2 m-2 font-semibold shadow-lg text-white">
-          Modifier
+        <add-dialog @save="handleSave" ref="addDialog"></add-dialog>
+        <button @click="openEditDialog" :class="{'bg-slate-400': buttonStates['edit'], 'custom-blueGrey': !buttonStates['edit'], 'scale-90': buttonStates['edit']}" class="rounded-lg p-2 m-2 font-semibold shadow-lg text-white">
+          <edit-dialog @save="handleEdit" ref="editDialog"></edit-dialog>
+          Edit
         </button>
-        <button @click="handleButtonClick('supprimer')" :class="{'bg-slate-400': buttonStates['supprimer'], 'custom-blueGrey': !buttonStates['supprimer'], 'scale-90': buttonStates['supprimer']}" class="rounded-lg p-2 m-2 font-semibold shadow-lg text-white">
-          Supprimer
+        <button @click="openDeleteDialog" :class="{'bg-slate-400': buttonStates['delete'], 'custom-blueGrey': !buttonStates['delete'], 'scale-90': buttonStates['delete']}" class="rounded-lg p-2 m-2 font-semibold shadow-lg text-white">
+          <delete-dialog @delete="handleDelete" ref="deleteDialog"></delete-dialog>
+          Delete
         </button>
   </div>
   <div class="flex justify-center items-center">
@@ -67,8 +66,17 @@
 
 <script>
 
-export default {
+import axios from 'axios';
+import AddDialog from './AddDialog.vue';
+import DeleteDialog from './DeleteDialog.vue';
+import EditDialog from './EditDialog.vue';
 
+export default {
+  components: {
+    AddDialog,
+    EditDialog,
+    DeleteDialog,
+  },
   name: 'NavBar',
   data() {
     return {
@@ -155,12 +163,96 @@ export default {
     handleMouseLeave(item) {
       item.hovered = false;
     },
-    ajouter() {
+    openAddDialog() {
+        this.$refs.addDialog.dialog = true;
     },
-    supprimer() {
+    handleSave(data) {
+      axios.post('/users', {
+        data: {
+          nom: data.nom,
+          prenom: data.prenom,
+          poste: data.poste,
+          equipe: data.equipe,
+          agence: data.agence,
+          photo_pro: data.photo_pro,
+          photo_fun: data.photo_fun,
+          nom_prenom: data.nom_prenom,
+        },
+      })
+        .then(() => {
+          this.items.push({
+            id: this.items.length + 1,
+            nom: data.nom,
+            prenom: data.prenom,
+            poste: data.poste,
+            equipe: data.equipe,
+            agence: data.agence,
+            photo_pro: data.photo_pro,
+            photo_fun: data.photo_fun,
+            nom_prenom: data.nom_prenom,
+          });
+        })
+        .catch(error => {
+          console.error('Error saving character:', error);
+        })
+        .finally(() => {
+          this.$refs.addDialog.close();
+        });
     },
-    modifier() {
-
+    openDeleteDialog() {
+      this.$refs.deleteDialog.dialog = true;
+    },
+    handleDelete(data) {
+      axios.delete(`/users/${data.nom_prenom}`, {
+        data: {
+          nom_prenom: data.nom_prenom,
+        },
+      })
+        .then(() => {
+          const index = this.items.findIndex(item => item.nom_prenom === data.nom_prenom);
+          if (index !== -1) {
+            this.items.splice(index, 1);
+            console.log('Item deleted successfully:', data.nom_prenom);
+          }
+        })
+        .catch(error => {
+          console.error('Error deleting item:', error);
+        })
+        .finally(() => {
+          this.$refs.deleteDialog.close();
+        });
+    },
+    openEditDialog() {
+      this.$refs.editDialog.dialog = true;
+    },
+    handleEdit(data) {
+      const index = this.items.findIndex(item => item.id === data.id);
+      if (index !== -1) {
+        const editedItem = {
+          id: data.id,
+          nom: data.nom,
+          prenom: data.prenom,
+          poste: data.poste,
+          equipe: data.equipe,
+          agence: data.agence,
+          photo_pro: data.photo_pro,
+          photo_fun: data.photo_fun,
+          nom_prenom: data.nom_prenom,
+        };
+      
+        axios.put(`/users/${data.nom_prenom}`, editedItem)
+          .then(() => {
+            console.log('Item updated successfully:', data.nom_prenom);
+          })
+          .catch(error => {
+            console.error('Error updating item:', error);
+          });
+        
+        this.items[index] = editedItem;
+        this.$refs.editDialog.close();
+      } else {
+        console.error('Item not found for editing');
+      }
     },
   },
 };
