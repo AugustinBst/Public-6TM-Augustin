@@ -25,7 +25,6 @@ User
     </div>
 
 
-    <!-- Menu hamburger pour les tailles d'écran plus petites -->
     <div v-if="showMenu" class="lg:hidden absolute top-0 left-0 right-0 bg-gray-800 p-4 flex flex-col items-center">
       <button @click="toggleMenu" class="lg:hidden text-white focus:outline-none ml-auto">
       <svg class="h-6 w-6" fill="none" stroke="currentColor"
@@ -61,7 +60,6 @@ export default {
   mounted() {
     axios.get("http://localhost:8000/")
     .then(response => {
-        // Mettez à jour la propriété items après avoir reçu la réponse
         this.items = response.data;
       })
   },
