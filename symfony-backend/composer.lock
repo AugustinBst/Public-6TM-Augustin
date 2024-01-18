@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "04bd209f8bbe6412de8264d6c7c15b56",
+    "content-hash": "2e5d97ac1758502090ad807f392b5958",
     "packages": [
         {
             "name": "nelmio/cors-bundle",
